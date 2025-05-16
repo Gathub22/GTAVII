@@ -3,6 +3,7 @@ using UnityEngine;
 
 class CharacterController : MonoBehaviour
 {
+	public int hp = 3;
 
 	public float JumpStrength;
 	private Rigidbody rb;
@@ -20,6 +21,10 @@ class CharacterController : MonoBehaviour
 			rb.AddForce(Vector3.up * JumpStrength * Time.deltaTime);
 		}
 
-	}
-
+		if (hp <= 0)
+		{
+			print("Game Over")
+			Destroy(gameObject);
+		}
+  }
 }

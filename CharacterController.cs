@@ -21,6 +21,8 @@ class CharacterController : MonoBehaviour
 			rb.AddForce(Vector3.up * JumpStrength * Time.deltaTime);
 		}
 
+		rb.AddForce(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime);
+
 		if (hp <= 0)
 		{
 			print("Game Over")
